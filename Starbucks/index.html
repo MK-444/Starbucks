@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://www.starbucksathome.com/cz/sites/default/files/2021-03/logo_global_new.svg" type="image/x-icon" />
+    <title>Responsive Starbucks Website Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <div class="circle"></div>
+        <header class="header">
+            <a href="#"><img src="https://www.starbucksathome.com/cz/sites/default/files/2021-03/logo_global_new.svg" class="logo"></a>
+            <div class="toggle" onclick="toggleMenu();"></div>
+            <ul class="navigation">
+                <li class="navigation__item">
+                    <a class="navigation__link" href="#">Home</a>
+                </li>
+                <li class="navigation__item">
+                    <a class="navigation__link" href="#">Menu</a>
+                </li>
+                <li class="navigation__item">
+                    <a class="navigation__link" href="#">What's New</a>
+                </li>
+                <li class="navigation__item">
+                    <a class="navigation__link" href="#">Contact</a>
+                </li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2 class="textBox__title">It's not just Coffee<br>It's <span class="textBox__subtitle">Starbucks</span></h2>
+                <p class="textBox__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eisumod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                <a class="textBox__btn" href="#">Learn More</a>
+            </div>
+            <div class="imgBox">
+                <img src="image/img1.png" class="starbucks">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li class="thumb__list">
+                <img class="thumb__img" src="image/thumb1.png" onclick="imgSlider('image/img1.png');changeCircleColor('#017143');changeBackground('#f5fcf4')">
+            </li>
+            <li class="thumb__list">
+                <img class="thumb__img" src="image/thumb2.png" onclick="imgSlider('image/img2.png');changeCircleColor('#eb7495');changeBackground('#fff2f6')">
+            </li>
+            <li class="thumb__list">
+                <img class="thumb__img" src="image/thumb3.png" onclick="imgSlider('image/img3.png');changeCircleColor('#d752b1');changeBackground('#ffecfb')">
+            </li>
+        </ul>
+        <ul class="sci">
+            <li class="sci__list">
+                <a class="sci__link" href="#"><img src="image/facebook.png"></a>
+            </li class="sci__list">
+            <li class="sci__list">
+                <a class="sci__link" href="#"><img src="image/twitter.png"></a>
+            </li>
+            <li class="sci__list">
+                <a class="sci__link" href="#"><img src="image/instagram.png"></a>
+            </li>
+        </ul>
+    </section>
+
+    <script type="text/javascript">
+        function imgSlider(anything) {
+            document.querySelector('.starbucks').src = anything;
+
+        }
+
+        function changeCircleColor(color) {
+            const circle = document.querySelector('.circle');
+            const sci = document.querySelector('.sci');
+            const btn = document.querySelector('.textBox__btn');
+            const subtitle = document.querySelector('.textBox__subtitle');
+
+            circle.style.background = color;
+            sci.style.background = color;
+            btn.style.background = color;
+            subtitle.style.color = color;
+
+        }
+
+        function changeBackground(bg) {
+            const background = document.querySelector('section');
+            background.style.backgroundColor = bg;
+        }
+
+        function toggleMenu() {
+            var menuToggle = document.querySelector('.toggle');
+            var navigation = document.querySelector('.navigation');
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
